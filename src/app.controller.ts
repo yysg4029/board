@@ -1,5 +1,6 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param, Query } from '@nestjs/common';
 import { AppService } from './app.service';
+import { query } from 'express';
 
 @Controller()
 export class AppController {
@@ -11,7 +12,9 @@ export class AppController {
   }
 
   @Get('name')
-  getName() : string{
-    return 'sungjong you'
+  getName(
+    @Query('name') name: string,
+  ) : string{
+    return `${name} hello`
   }
 }

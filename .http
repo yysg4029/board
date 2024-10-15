@@ -1,0 +1,17 @@
+### 게시글 전체 가져오기
+GET http://localhost:3000/board
+
+### 게시글 한개 가져도기(id번호로.)
+GET http://localhost:3000/board/7
+
+
+### 
+POST http://localhost:3000/board
+content-type: application/json
+
+{
+    "name" : "fastcampus",
+    "contents" : "content11"
+}
+
+24C1648A
