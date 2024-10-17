@@ -2,16 +2,25 @@
 GET http://localhost:3000/board
 
 ### 게시글 한개 가져도기(id번호로.)
-GET http://localhost:3000/board/7
+GET http://localhost:3000/board/6
 
 
-### 
+### 게시물 작성하기
 POST http://localhost:3000/board
 content-type: application/json
 
 {
-    "name" : "fastcampus",
-    "contents" : "content11"
+    "name" : "test",
+    "contents" : "content test"
+}
+### 게시물 수정하기
+Put http://localhost:3000/board/5
+content-type: application/json
+
+{
+    "name" : "changed"
 }
 
-24C1648A
+### 게시물 삭제하기
+DELETE http://localhost:3000/board/6
+

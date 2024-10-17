@@ -1,7 +1,9 @@
+import { ApiTags } from '@nestjs/swagger';
 import { BoardService } from './board.service';
 import { Body, Controller, Delete, Get, Injectable, Param, Post, Put } from '@nestjs/common';
 
 @Controller('board')
+@ApiTags('Board') // main.ts에서 airtag와 연동됨
 export class BoardController {
     constructor(
         private readonly boardService : BoardService
@@ -30,14 +32,14 @@ export class BoardController {
         @Param('id') id : number,
         @Body() data : any
     ){
-        return 'update';
+        return this.boardService.update(Number(id), data);
     }
 
     @Delete(':id')
     remove( // 글 삭제
         @Param('id') id : number
     ){
-        return 'delete';
+        return this.boardService.delete(Number(id));
     }
 }
 
